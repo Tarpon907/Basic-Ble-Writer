@@ -4,9 +4,10 @@ buildscript {
     repositories {
         maven { url 'https://maven.google.com' }
         jcenter()
+        google()
     }
     dependencies {
-        classpath group:'com.android.tools.build', name:'gradle', version:"${ANDROID_GRADLE_PLUGIN_VERSION_MATCHER}"
+        classpath group:'com.android.tools.build', name:'gradle', version: '3.4.2'
         classpath group:'com.github.ben-manes', name:'gradle-versions-plugin', version:"${GRADLE_VERSIONS_PLUGIN_VERSION_MATCHER}"
     }
 }

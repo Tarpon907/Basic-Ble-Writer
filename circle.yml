@@ -37,7 +37,7 @@ test:
   override:
     - ./gradlew assemble assembleDebugAndroidTest lint findbugs dependencyUpdates --profile
 
-    - PATH="/home/ubuntu/mybin/gcloud/bin:${PATH}" && parallel tools/ci/firebase-test-lab-test-module.sh toastPluginSettingApp ${GCLOUD_DEFAULT_BUCKET} {1} ':::' "model=Nexus4,version=19,orientation=portrait" "model=NexusLowRes,version=25,orientation=portrait"
+    - PATH="/home/ubuntu/mybin/gcloud/bin:${PATH}" && parallel tools/ci/firebase-test-lab-test-module.sh bleWriterPluginSettingApp ${GCLOUD_DEFAULT_BUCKET} {1} ':::' "model=Nexus4,version=19,orientation=portrait" "model=NexusLowRes,version=25,orientation=portrait"
 
 
     # Convert the coverage.ec files into readable reports
@@ -46,6 +46,6 @@ test:
 
     - cp -r build/reports/profile $CIRCLE_ARTIFACTS
     - cp -r build/dependencyUpdates $CIRCLE_ARTIFACTS
-    - cp -r toastPluginSettingApp/build/outputs $CIRCLE_ARTIFACTS
-    - cp -r toastPluginSettingApp/build/reports $CIRCLE_ARTIFACTS
-    - cp -r toastPluginSettingApp/build/outputs/androidTest-results/* $CIRCLE_TEST_REPORTS
+    - cp -r bleWriterPluginSettingApp/build/outputs $CIRCLE_ARTIFACTS
+    - cp -r bleWriterPluginSettingApp/build/reports $CIRCLE_ARTIFACTS
+    - cp -r bleWriterPluginSettingApp/build/outputs/androidTest-results/* $CIRCLE_TEST_REPORTS
